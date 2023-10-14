@@ -8,7 +8,7 @@ import com.example.demo.model.Reserve;
 
 
 @Repository
-public interface ReserveRepository extends JpaRepository<Reserve, Integer> {
+public interface ReserveRepository extends JpaRepository<Reserve, Long> {
     List<Reserve> findAllByUserUserId(Long userId);
 }
 

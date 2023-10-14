@@ -16,7 +16,7 @@ public class Reserve {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer reserveId;
+	private Long reserveId;
 	private Date reserveDate;
 
 	@ManyToOne
@@ -27,11 +27,14 @@ public class Reserve {
 	@JoinColumn(name = "areaId")
 	private Area area;
 
+	
+	
 	public Reserve() {
 		super();
 	}
+	
 
-	public Reserve(Integer reserveId, Date reserveDate, User user, Area area) {
+	public Reserve(Long reserveId, Date reserveDate, User user, Area area) {
 		super();
 		this.reserveId = reserveId;
 		this.reserveDate = reserveDate;
@@ -39,11 +42,12 @@ public class Reserve {
 		this.area = area;
 	}
 
-	public Integer getReserveId() {
+
+	public Long getReserveId() {
 		return reserveId;
 	}
 
-	public void setReserveId(Integer reserveId) {
+	public void setReserveId(Long reserveId) {
 		this.reserveId = reserveId;
 	}
 
@@ -54,15 +58,14 @@ public class Reserve {
 	public void setReserveDate(Date reserveDate) {
 		this.reserveDate = reserveDate;
 	}
-	
+
 	public User getUser() {
 		return user;
 	}
 
-	public void setOwner(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
-
 
 	public Area getArea() {
 		return area;
